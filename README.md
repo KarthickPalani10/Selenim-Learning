@@ -18,6 +18,36 @@
      ● It supported multiple browser and OS
      ● It supported multiple language like java, c#,python,PHP,perl,Ruby
      ● Unlike RC it does not rely on javascript for selenium automation testing
+ ----------------------------------------------------------------------------------------------------------------------------------------------
+1,Getting Start with Test Automation.
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Chrome {
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "C:\\application\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://relevel.com/home");
+		System.out.println("The Manstor");
+		driver.quit();\\Close the 
+ ----------------------------------------------------------------------------------------------------------------------------------------------           
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class FirefoxBrowser {
+	
+	public static void main (String[]args) throws InterruptedException{
+		System.setProperty("webdriver.gecko.driver", "C:\\application\\geckodriver-v0.31.0-win64\\geckodriver.exe");
+		WebDriver driver = new FirefoxDriver();
+		Thread.sleep(5000);
+		driver.get("https://relevel.com/home");
+		System.out.println(driver.getTitle());
+		driver.close();
+ ----------------------------------------------------------------------------------------------------------------------------------------------           
+			
+
+     
      
      
  
