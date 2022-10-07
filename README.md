@@ -30,8 +30,10 @@ public class Chrome {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://relevel.com/home");
 		System.out.println("The Manstor");
-		driver.quit();\\Close the 
+		driver.quit();\\Close the window
  ----------------------------------------------------------------------------------------------------------------------------------------------           
+2, Using the Firefox
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -45,7 +47,7 @@ public class FirefoxBrowser {
 		System.out.println(driver.getTitle());
 		driver.close();
  ----------------------------------------------------------------------------------------------------------------------------------------------           
-			
+3,			
 
      
      
