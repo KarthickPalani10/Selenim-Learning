@@ -47,13 +47,15 @@ public class FirefoxBrowser {
 		System.out.println(driver.getTitle());
 		driver.close();
  ----------------------------------------------------------------------------------------------------------------------------------------------           
-3,UI Locators and Xpaths
+3,UI Locators and Xpaths...(https://opensource-demo.orangehrmlive.com/web/index.php/auth/login)
 
 What is xpath ?
  
  * Xpath is one of the most flexible and strongest location strategy and can be used for locating an in a web page.
  
-● Xpath= //tagname[@attribute=’value’]
+● Xpath= Syntax ://tagname[@attribute=’value’]
+  Password      ://input[@type='password']
+                 
 
 // - It helps you select the current node.
 Tagname-  It is name of particular node like input, div, button etc.
