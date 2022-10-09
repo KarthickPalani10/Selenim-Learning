@@ -47,7 +47,137 @@ public class FirefoxBrowser {
 		System.out.println(driver.getTitle());
 		driver.close();
  ----------------------------------------------------------------------------------------------------------------------------------------------           
-3,			
+3,UI Locators and Xpaths
+
+What is xpath ?
+ 
+ * Xpath is one of the most flexible and strongest location strategy and can be used for locating an in a web page.
+ 
+● Xpath= //tagname[@attribute=’value’]
+
+// - It helps you select the current node.
+Tagname-  It is name of particular node like input, div, button etc.
+@ - Used to Select attribute.
+Attribute - Attribute name of the node like class,id,name,text, colour etc.
+Value - It represents the value of the attribute.
+
+Types of xpath. Two types of xpath.
+
+● Absolute xpath
+   *It is the xpath that start to locate elements from root. It starts with ‘/’
+   *Absolute xpath will start from the root node it will have sigle /.
+Exmple:   
+Xpath - /html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input
+
+● Relative xpath
+   *It starts from the middle/anywhere of HTML DOM .It starts with ‘//’. It can search elements anywhere on the webpage.
+   *Relative xpath will start from the curret node it will have double //.
+Exmple:
+Xpath - //input[@data-testid='royal_email']
+
+XPath using Contains....(https://opensource-demo.orangehrmlive.com/web/index.php/auth/login)
+
+-->>Different types of methods for writing the xpath
+
+1,XPath using Contains.
+ 
+->Contains() is a very useful method in XPath.
+->It can be used for all the dynamic elements.
+Syntax : Must Know
+          /tagname[contains(@attribute,constantvalue)]
+Username: //input[contains(@name,'username')]
+
+2,XPath using Logical Operators: OR & AND...(https://opensource-demo.orangehrmlive.com/web/index.php/auth/login)
+   
+ *We can write logical operators OR & AND on the attributes in xpath. In the case of OR, any one of the conditions should
+  be true or both, whereas, in the case of AND, both the conditions should be true.
+  
+  Using OR
+  
+    XPath=//tagname[@attribute1=value1 OR @attribute2=value1]
+User id : //input[@name="username" or contains(@placeholder,'abc')]
+
+  Using AND
+  
+    XPath=//tagname[@attribute1=value1 AND @attribute2=value1]/
+User id ://input[@name="username" and contains(@placeholder,'name')]
+
+Example of using OR & AND
+  *Find input text box of Business Email on the below mentioned page..
+  
+3,XPath using Text()...(https://opensource-demo.orangehrmlive.com/web/index.php/auth/login)
+
+  It is similar to Contains() method.
+  It is very useful where elements values changes dynamically.
+  In Starts-With, the initial value of the attribute’s text is used for locating the element.
+Syntax :
+            //tagname[starts-with(@attribute,value)]
+User id :   //input[starts-with(@name,'username')]
+---------------------------------------------------------------------------------------------------------------------------------------------- 
+
+
+
+  
+  
+  
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+	
+
+
 
      
      
