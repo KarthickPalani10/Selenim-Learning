@@ -116,6 +116,70 @@ Syntax :
             //tagname[starts-with(@attribute,value)]
 User id :   //input[starts-with(@name,'username')]
 ---------------------------------------------------------------------------------------------------------------------------------------------- 
+Identification strategies:(https://opensource-demo.orangehrmlive.com/web/index.php/auth/login)Practice page
+
+Locating the elements with know Attributes.
+
+1,Locating elements with know Attributes.
+  Syntax:
+         //*[@attributeName='value']
+user id://*[@name='username']
+ 
+2,Locating the elements with Know Element and Attributes. 
+  Syntax:
+        //elementsName[@attributes='value']
+user id://input[@name='username']
+
+3,locating elements with known Visible text  (exact match).(OrangeHRM, Inc.)
+ * Used for locating elements containing exact text within an element.(etha oru text atha vera web page pogum athu la etha mathiri x path find pannalam)
+  Syntax:
+     //element[text()='exact text'] and //*[text()='exact text']
+     //a[text()='OrangeHRM, Inc']   and //*[text()='OrangeHRM, Inc']
+     
+4,locating elements whwn the part of the visible text is known (partial match).(OrangeHRM, Inc.)
+  Syntax:
+    //elementsName[contains(text(),'part of the text')] and //*[contains(text(),'part of the text')]
+    //a[contains(text(),'OrangeHRM')]                   and //*[contains(text(),'OrangeHRM')]
+    
+5,locating element with Multiple atrributs.(exmple intract with login button)(etha at)
+  Syntax:
+     //*[@attribute][@attribute 1]...we can use multiple attributes
+     //*[@type='submit'][@class='oxd-button oxd-button--medium oxd-button--main orangehrm-login-button'] 
+     
+6,locating elements when starts-with(text(),'starting text')...(OrangeHRM, Inc.)
+  Syntax:
+     //element[starts-with(text(),'Starting text')]
+     ////a[starts-with(text(),https)]
+     
+7,Locating Elements with dynamic attribute values..
+Ex: karthick 123(atha value marita irukum 
+EX: karthick 143
+EX: karthick 125
+
+ Syntax:
+     //element[starts-with(text(),'Starting text')]
+     //elementsName[contains(text(),'part of the text')]
+---------------------------------------------------------------------------------------------------------------------------------------------- 
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+   
+
 
 
 
