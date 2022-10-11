@@ -46,8 +46,25 @@ public class FirefoxBrowser {
 		driver.get("https://relevel.com/home");
 		System.out.println(driver.getTitle());
 		driver.close();
- ----------------------------------------------------------------------------------------------------------------------------------------------           
-3,UI Locators and Xpaths...(https://opensource-demo.orangehrmlive.com/web/index.php/auth/login)
+ ----------------------------------------------------------------------------------------------------------------------------------------------   
+ 3,Finding the web elements & Intracting with them.
+ 
+ public class FindingTheElement {
+
+    public static void main(String[] args) throws InterruptedException {
+
+        System.setProperty("webdriver.gecko.driver", "C:\\application\\geckodriver-v0.31.0-win64\\geckodriver.exe");
+        WebDriver driver = new FirefoxDriver();
+        driver.get("https://www.google.com/search");
+        //Enter a serch team
+        //Click the wikpedia link
+        driver.findElement(By.name("q")).sendKeys("wikpedia" + Keys.ENTER);
+        Thread.sleep(4000);
+        driver.quit();
+    }
+ ----------------------------------------------------------------------------------------------------------------------------------------------
+
+1,UI Locators and Xpaths...(https://opensource-demo.orangehrmlive.com/web/index.php/auth/login)
 
 What is xpath ?
  
