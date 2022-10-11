@@ -63,6 +63,20 @@ public class FirefoxBrowser {
         driver.quit();
     }
  ----------------------------------------------------------------------------------------------------------------------------------------------
+  4, How to work with likes in selenim (hyperLikes)
+ 
+ public class LinkExample {
+//Play with hyperlikes
+    public static void main (String[]args){
+        System.setProperty("webdriver.chrome.driver", "C:\\application\\chromedriver_win32\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.leafground.com/link.xhtml");
+        //we have linkText and partialLinkText
+       // driver.findElement(linkText("Go to Dashboard")).click();
+        driver.findElement(partialLinkText("Go to")).click();
+    }
+}
+ ----------------------------------------------------------------------------------------------------------------------------------------------
 
 1,UI Locators and Xpaths...(https://opensource-demo.orangehrmlive.com/web/index.php/auth/login)
 
