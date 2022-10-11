@@ -77,6 +77,65 @@ public class FirefoxBrowser {
     }
 }
  ----------------------------------------------------------------------------------------------------------------------------------------------
+ 5, Working with text Box (Work with edit Fields)
+ 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class EditExample {
+    //Working with edit field
+    public static void main(String[] args) throws InterruptedException{
+            //open the browser and where is the path copy and past.
+            System.setProperty("webdriver.chrome.driver", "C:\\application\\chromedriver_win32\\chromedriver.exe");
+            //We can create the object
+            WebDriver driver = new ChromeDriver();
+            //We can use the get method where is the link u can interact with them
+            driver.get("https://www.leafground.com/input.xhtml");
+            Thread.sleep(2000);
+            //Write the box Type your name
+            WebElement name = driver.findElement(By.id("j_idt88:name"));
+            name.sendKeys("karthick");
+            Thread.sleep(2000);
+            //add your text Append Country to this City. Must know the concept append meaning only write which we added.not overwrite
+            WebElement append = driver.findElement(By.id("j_idt88:j_idt91"));
+            append.sendKeys(" India");
+            Thread.sleep(2000);
+            //Type email and Tab. Confirm control moved to next element. we can do this Enter the email id + tab swich the next field.
+            WebElement eMailId = driver.findElement(By.id("j_idt88:j_idt99"));
+            eMailId.sendKeys("ntt@gmail.com" + Keys.TAB);
+            Thread.sleep(2000);
+            //Type about yourself. Just type some thing about the field
+            WebElement yourself= driver.findElement(By.id("j_idt88:j_idt101"));
+            yourself.sendKeys("I am karthick. I'm from chennai");
+            Thread.sleep(2000);
+            //Retrieve the typed text. whatever is Write the filed Just print the value
+            WebElement getAttribute = driver.findElement(By.name("j_idt88:j_idt97"));
+            String value = getAttribute.getAttribute("value");
+            System.out.println(value);
+            Thread.sleep(2000);
+            //Clear the typed text. Just Clear the field.
+            WebElement clearBox = driver.findElement(By.xpath("//*[@id=\"j_idt88:j_idt95\"]"));
+            clearBox.clear();
+            Thread.sleep(2000);
+            //Verify if text box is disabled. isEnabled method is boolean type. True or false only print
+            WebElement disbleBox = driver.findElement(By.xpath("//*[@id=\"j_idt88\"]/div[3]/div"));
+            boolean enabled = disbleBox.isEnabled();
+            System.out.println(enabled);
+            Thread.sleep(2000);
+            //Just Press Enter and confirm error message. Just enter the key is used check the filed.
+            WebElement enter = driver.findElement(By.id("j_idt106:thisform:age"));
+            enter.sendKeys(Keys.ENTER);
+            Thread.sleep(2000);
+            //Click and Confirm Label Position Changes.Just click the key is used check the filed.
+            WebElement click = driver.findElement(By.id("j_idt106:float-input"));
+            click.click();
+            driver.quit();
+        }}
+
+----------------------------------------------------------------------------------------------------------------------------------------------
 
 1,UI Locators and Xpaths...(https://opensource-demo.orangehrmlive.com/web/index.php/auth/login)
 
