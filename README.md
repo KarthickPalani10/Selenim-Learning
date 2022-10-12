@@ -136,6 +136,7 @@ public class EditExample {
         }}
 ----------------------------------------------------------------------------------------------------------------------------------------------
 6,Working with Button (Bound with button)
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
@@ -169,8 +170,46 @@ public class ButtonExample {
             //4,Go to the home.(Click and Confirm title.)Click is method
             WebElement homeButton = driver.findElement(By.xpath("//*[@id=\"j_idt88:j_idt90\"]/span"));
             homeButton.click();
-        }
-}
+        }}
+----------------------------------------------------------------------------------------------------------------------------------------------
+7,Worning with Drop downs/Sectable components
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import java.util.List;
+
+public class DropDownExample  {
+    public static void main(String[] args)throws InterruptedException{
+        //open the browser and where is the path copy and past.
+        System.setProperty("webdriver.chrome.driver", "C:\\application\\chromedriver_win32\\chromedriver.exe");
+        //We can create the object
+        WebDriver driver = new ChromeDriver();
+        //We can use the get method where is the link u can interact with them
+        driver.get("https://www.leafground.com/select.xhtml");
+        //Which is your favorite UI Automation tool? interact with dropdowns. Must imp we can use method Select oje create pannanum
+        WebElement dropDown1 = driver.findElement(By.xpath("//*[@id=\"j_idt87\"]/div/div[1]/div[1]/div/div/select"));
+        Select select = new Select(dropDown1);
+        select.selectByIndex(1);
+        Thread.sleep(3000);
+        select.selectByVisibleText("Playwright");
+        Thread.sleep(3000);
+        //  use list interface <> Using Generics
+        List <WebElement> listOfOption = select.getOptions();
+        int Size = listOfOption.size();
+        System.out.println("Number of element : "+Size);
+        // We can use sendkey as well
+        dropDown1.sendKeys("Cypress");
+        //Choose the Course. We can perform multiselect.we can use the select obj create pannanum method create pannaum
+        WebElement multiSelect = driver.findElement(By.xpath("//*[@id=\"j_idt87:auto-complete\"]/ul"));
+        Select multiSelectionBox = new Select(multiSelect);
+        multiSelectionBox.selectByIndex(2);
+        multiSelectionBox.selectByIndex(5);
+        multiSelectionBox.selectByIndex(7);
+    }}
+----------------------------------------------------------------------------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
