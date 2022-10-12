@@ -210,7 +210,39 @@ public class DropDownExample  {
         multiSelectionBox.selectByIndex(7);
     }}
 ----------------------------------------------------------------------------------------------------------------------------------------------
+8,Working with Alerts/type of alerts/
+	
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 
+public class AlertsExample {
+    public static void main (String [] args){
+        //open the browser and where is the path copy and past.
+        System.setProperty("webdriver.chrome.driver", "C:\\application\\chromedriver_win32\\chromedriver.exe");
+        //We can create the object
+        WebDriver driver = new ChromeDriver();
+        //We can use the get method where is the link u can interact with them
+        driver.get("https://www.leafground.com/alert.xhtml;jsessionid");
+        //Click the button to display. Alert (Simple Dialog)
+        WebElement alertBox = driver.findElement(By.xpath("//*[@id=\"j_idt88:j_idt91\"]/span[2]"));
+        alertBox.click();
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
+        //Click the button to display confirm box.Alert (Confirm Dialog)
+        WebElement confirmBox = driver.findElement(By.xpath("//*[@id=\"j_idt88:j_idt93\"]/span[2]"));
+        confirmBox.click();
+        Alert confirmAlert = driver.switchTo().alert();
+        confirmAlert.dismiss();
+        //Alert (Prompt Dialog
+        WebElement promptBox = driver.findElement(By.xpath("//*[@id=\"j_idt88:j_idt104\"]/span[2]"));
+        promptBox.click();
+        Alert promptAleat = driver.switchTo().alert();
+        promptAleat.sendKeys("karthick");
+        promptAleat.accept();
+    }}	
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
 1,UI Locators and Xpaths...(https://opensource-demo.orangehrmlive.com/web/index.php/auth/login)
