@@ -244,6 +244,42 @@ public class AlertsExample {
         promptAleat.accept();
     }}	
 ----------------------------------------------------------------------------------------------------------------------------------------------
+9, working with Radio Button
+	
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class RadioButtonExample {
+    public static void main(String[] args) {
+        //open the browser and where is the path copy and past.
+        System.setProperty("webdriver.chrome.driver", "C:\\application\\chromedriver_win32\\chromedriver.exe");
+        //We can create the object
+        WebDriver driver = new ChromeDriver();
+        //We can use the get method where is the link u can interact with them
+        driver.get("https://www.leafground.com/radio.xhtml");
+        //Select the age group (only if not selected) we can use
+        WebElement below20 = driver.findElement(By.xpath("//*[@id=\"j_idt87:age\"]/div/div[1]/label"));
+        below20.click();
+        WebElement favorite = driver.findElement(By.xpath("//*[@id=\"j_idt87:console1\"]/tbody/tr/td[1]/label"));
+        favorite.click();
+        //UnSelectable
+        WebElement UnSelectable = driver.findElement(
+                By.xpath("//*[@id=\"j_idt87:city2\"]/div/div[1]/div/div[2]"));
+        //Find the default select radio button
+        WebElement selected = driver.findElement(
+                By.xpath("//*[@id=\"j_idt87:console2\"]/tbody/tr/td[2]/div/div[2]/span"));
+        boolean clickOrnot1 = UnSelectable.isSelected();
+        boolean clickOrnot2 = selected.isSelected();
+        System.out.println("This not UnSelectable :"+clickOrnot1);
+        System.out.println("This default  selected :"+clickOrnot2);
+    }}
+----------------------------------------------------------------------------------------------------------------------------------------------
+	
+	
+	
+----------------------------------------------------------------------------------------------------------------------------------------------
 
 1,UI Locators and Xpaths...(https://opensource-demo.orangehrmlive.com/web/index.php/auth/login)
 
