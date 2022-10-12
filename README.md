@@ -134,6 +134,43 @@ public class EditExample {
             click.click();
             driver.quit();
         }}
+----------------------------------------------------------------------------------------------------------------------------------------------
+6,Working with Button (Bound with button)
+import org.openqa.selenium.By;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+public class ButtonExample {
+        //Working with Button field
+        public static void main(String[] args){
+            //open the browser and where is the path copy and past.
+            System.setProperty("webdriver.chrome.driver", "C:\\application\\chromedriver_win32\\chromedriver.exe");
+            //We can create the object
+            WebDriver driver = new ChromeDriver();
+            //We can use the get method where is the link u can interact with them
+            driver.get("https://www.leafground.com/button.xhtml");
+            //1, Get the xy position Use the Point method This Must known(Find the position of the Submit button)
+            WebElement getPosition  = driver.findElement(By.xpath("//*[@id=\"j_idt88:j_idt94\"]/span[2]"));
+            Point xypoint = getPosition.getLocation();
+            int xValue = xypoint.getX();
+            int yValue =xypoint.getY();
+            System.out.println("This is x value "+xValue+" This is y value "+yValue);
+            //2, Find the color(Find the Save button color)
+            WebElement colorButton = driver.findElement(By.xpath("//*[@id=\"j_idt88:j_idt96\"]/span[2]"));
+            String color = colorButton.getCssValue("backGrount-color");
+            System.out.println("Botton color is :"+color);
+            //3,Find the size.(Find the height and width of this button)GetSize method and getheight and getwidth method
+            WebElement sizeButton =driver.findElement(By.xpath("//*[@id=\"j_idt88:j_idt98\"]/span[2]"));
+            int height= sizeButton.getSize().getHeight();
+            int width = sizeButton.getSize().getWidth();
+            System.out.println("Height is  :"+height+" Width is "+width);
+            //4,Go to the home.(Click and Confirm title.)Click is method
+            WebElement homeButton = driver.findElement(By.xpath("//*[@id=\"j_idt88:j_idt90\"]/span"));
+            homeButton.click();
+        }
+}
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
