@@ -276,8 +276,37 @@ public class RadioButtonExample {
         System.out.println("This default  selected :"+clickOrnot2);
     }}
 ----------------------------------------------------------------------------------------------------------------------------------------------
-	
-	
+10, Working with Check Boxes (interact with Checkbox)
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class CheckBoxExample {
+
+    public static void main(String[] args) throws InterruptedException{
+        //open the browser and where is the path copy and past.
+        System.setProperty("webdriver.chrome.driver", "C:\\application\\chromedriver_win32\\chromedriver.exe");
+        //We can create the object
+        WebDriver driver = new ChromeDriver();
+        //We can use the get method where is the link u can interact with them
+        driver.get("https://www.leafground.com/checkbox.xhtml");
+        //Verify if check box is disabled
+        WebElement disabled = driver.findElement(
+                By.xpath("//*[@id=\"j_idt87:j_idt102\"]"));
+        boolean selected = disabled.isEnabled();
+        System.out.println("This is disabled :"+selected);
+        //Basic Checkbox
+        WebElement Checkbox = driver.findElement(
+                By.xpath("//*[@id=\"j_idt87:j_idt89\"]/div[2]"));
+        Checkbox.click();
+        Thread.sleep(3000);
+        //Tri State Checkbox
+        WebElement click = driver.findElement(
+                By.xpath("//*[@id=\"j_idt87:ajaxTriState\"]/div[2]"));
+        click.click();
+    }}
 	
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
