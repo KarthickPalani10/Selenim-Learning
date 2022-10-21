@@ -309,6 +309,61 @@ public class CheckBoxExample {
     }}
 	
 ----------------------------------------------------------------------------------------------------------------------------------------------
+11,Advance concepts-Widows Handling
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.devtools.v85.dom.model.PseudoType;
+
+import java.util.Set;
+
+public class WindowExample {
+    public static void main(String[] args) {
+        //open the browser and where is the path copy and past.
+        System.setProperty("webdriver.chrome.driver", "C:\\application\\chromedriver_win32\\chromedriver.exe");
+        //We can create the object
+        WebDriver driver = new ChromeDriver();
+        //We can use the get method where is the link u can interact with them
+        driver.get("https://www.leafground.com/window.xhtml");
+        driver.manage().window().maximize();
+        String oldWindow= driver.getWindowHandle();
+        //Click and Confirm new Window Opens
+        WebElement firstButton = driver.findElement(By.xpath("//*[@id=\"j_idt88:new\"]/span"));
+        firstButton.click();
+        Set<String> handles =driver.getWindowHandles();
+        for(String newwindow : handles){
+            driver.switchTo().window(newwindow);
+        }
+        WebElement click =  driver.findElement(By.xpath("//*[@id=\"j_idt107\"]/div[2]"));
+        click.click();
+        driver.close();
+        driver.switchTo().window(oldWindow);//we can use the window(oldwindow) your hands can switch to parent win
+        //Open multiple window
+        WebElement openMultipleWindow = driver.findElement(
+                By.xpath("//*[@id=\"j_idt88:j_idt91\"]/span"));
+        openMultipleWindow.click();
+        //Find the number of opened tabs
+        int numberOfWindowsOpen = driver.getWindowHandles().size();
+        System.out.println("No of windows is "+numberOfWindowsOpen);
+        //Close all windows except Primary
+        WebElement dontCloseMe = driver.findElement(
+                By.xpath("//*[@id=\"j_idt88:j_idt93\"]/span[2]"));
+        dontCloseMe.click();
+        //set save the new windows 
+        Set<String> newWindowHandles = driver.getWindowHandles();
+        for (String  allwindows : newWindowHandles) {
+            if (!allwindows.equals(oldWindow)) {
+                driver.switchTo().window(allwindows);
+                driver.close();
+            }
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------------------
+12,
+----------------------------------------------------------------------------------------------------------------------------------------------
 
 1,UI Locators and Xpaths...(https://opensource-demo.orangehrmlive.com/web/index.php/auth/login)
 
