@@ -1,4 +1,4 @@
-# Selenim-Learning.
+# Selenium-Learning.
 
 1,    What is selenim?
       ● Selenium is a very popularly used Web UI(User interface) automation testing suite.
