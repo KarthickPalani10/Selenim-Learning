@@ -477,7 +477,28 @@ EX: karthick 125
  Syntax:
      //element[starts-with(text(),'Starting text')]
      //elementsName[contains(text(),'part of the text')]
----------------------------------------------------------------------------------------------------------------------------------------------- 
+----------------------------------------------------------------------------------------------------------------------------------------------
+Locating element relative to know element.(https://opensource-demo.orangehrmlive.com/web/index.php/auth/login)
+
+1,Locating a parent element.
+   * The parent axes contains the parent of the context node.
+   
+   Syntax ://<knowXpath>/parent::elementname
+   EX     ://*[@name='username']/parent::*
+     
+2,locating a child element
+   *The child axes contains the children of the context node.
+   
+   Syntax ://<knowXpath>/child::elementname
+   EX     :
+   
+   
+
+
+
+
+
+
      
 
 
