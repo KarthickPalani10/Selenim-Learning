@@ -391,7 +391,49 @@ public class FramesExample {
         System.out.println(size);
     }}
 ----------------------------------------------------------------------------------------------------------------------------------------------
+13,advanced Concepts Drag and drop(https://www.leafground.com/drag.xhtml)
+	
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
+public class DragAndDropExample {
+    public static void main(String[] args) {
+        System.setProperty("webdriver.chrome.driver","C:\\application\\chromedriver_win32\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.navigate().to("https://www.leafground.com/drag.xhtml");
+        driver.manage().window().maximize();
+        WebElement from = driver.findElement(By.xpath("//*[@id=\"form:drag_content\"]/p"));
+        WebElement to =driver.findElement(By.xpath("//*[@id=\"form:drop_content\"]/p"));
+        //you can perform with drag and drop we must create action ojc
+        Actions actions = new Actions(driver);
+        //actions.clickAndHold(from).moveToElement(to).release(to).build().perform();
+        actions.dragAndDrop(from,to).build().perform();
+	}}
+----------------------------------------------------------------------------------------------------------------------------------------------
+14,How to take tool tips text()
+	
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class ToolTipExample {
+    public static void main(String[] args) {
+    //open the browser and where is the path copy and past.
+        System.setProperty("webdriver.chrome.driver", "C:\\application\\chromedriver_win32\\chromedriver.exe");
+    //We can create the object
+    WebDriver driver = new ChromeDriver();
+    //We can use the get method where is the link u can interact with them
+    driver.get("https://www.leafground.com/input.xhtml");
+    WebElement name =  driver.findElement(By.xpath("//*[@id=\"j_idt88:j_idt95\"]"));
+    String toolTip =  name.getAttribute("title");
+        System.out.println(toolTip);
+	
+----------------------------------------------------------------------------------------------------------------------------------------------
 1,UI Locators and Xpaths...(https://opensource-demo.orangehrmlive.com/web/index.php/auth/login)
 
 What is xpath ?
