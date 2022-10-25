@@ -309,7 +309,7 @@ public class CheckBoxExample {
     }}
 	
 ----------------------------------------------------------------------------------------------------------------------------------------------
-11,Advance concepts-Widows Handling
+11,Advance concepts-Widows Handling(https://www.leafground.com/frame.xhtml)
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -362,7 +362,34 @@ public class WindowExample {
     }
 }
 ----------------------------------------------------------------------------------------------------------------------------------------------
-12,
+12,Adnance concepts Handling the frames
+	
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import java.util.List;
+public class FramesExample {
+    public static void main(String[] args) {
+        //open the browser and where is the path copy and past.
+        System.setProperty("webdriver.chrome.driver", "C:\\application\\chromedriver_win32\\chromedriver.exe");
+        //We can create the object
+        WebDriver driver = new ChromeDriver();
+        //We can use the get method where is the link u can interact with them
+        driver.get("https://www.leafground.com/frame.xhtml");
+        driver.manage().window().maximize();
+        driver.switchTo().frame(0);
+        //Click Me (Inside frame)
+        WebElement button1 = driver.findElement(By.xpath("//*[@id=\"Click\"]"));
+        button1.click();
+        String text = driver.findElement(By.id("Click")).getText();
+        System.out.println(text);
+        //How many frames in this page? Must use the List and driver.switchTo().defaultContent();
+        driver.switchTo().defaultContent();
+        List<WebElement>totalFrames= driver.findElements(By.tagName("iframe"));
+        int size = totalFrames.size();
+        System.out.println(size);
+    }}
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
 1,UI Locators and Xpaths...(https://opensource-demo.orangehrmlive.com/web/index.php/auth/login)
