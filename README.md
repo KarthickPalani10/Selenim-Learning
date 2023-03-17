@@ -548,20 +548,55 @@ EX: karthick 125
      //elementsName[contains(text(),'part of the text')]
 ----------------------------------------------------------------------------------------------------------------------------------------------
 Locating element relative to know element.(https://opensource-demo.orangehrmlive.com/web/index.php/auth/login)
+Imp Notes : 
+
+1.location a parent element
+2.location a child element
+3.location ancestors of a known element
+4.location follwing element
+5.location preceding element
+6.location follwing sibling
+7.location preceding sibling
 
 1,Locating a parent element.
    * The parent axes contains the parent of the context node.
    
    Syntax ://<knowXpath>/parent::elementname
-   EX     ://*[@name='username']/parent::*
+   EX     ://*[@placeholder='Username']/parent::*
+   
      
 2,locating a child element
    *The child axes contains the children of the context node.
    
    Syntax ://<knowXpath>/child::elementname
-   EX     :
+   EX     ://*[@placeholder='Username']/child::*
    
-   
+3.location ancestors of a known element
+Syntax ://<knowXpath>/ancestor::elementname
+EX     ://*[@placeholder='Username']/ancestor::form
+
+4.location follwing element
+(Just small note we shold use the following element first find out the known element after the follwing every element is called a follwing. you can use the lengh() method and metioned the index also)
+Syntax ://<knowXpath>/child::elementname
+EX     ://*[@placeholder='Username']/follwing::form
+
+5.location preceding element
+(Just small note we shold use the following element first find out the known element before the follwing every element is called a follwing. you can use the lengh() method and metioned the index also)
+Syntax ://<knowXpath>/child::elementname
+EX     ://*[@placeholder='Username']/preceding::form
+6.location follwing sibling
+7.location preceding sibling
+
+
+
+
+
+
+
+
+
+
+
 
 
 
