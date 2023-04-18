@@ -586,7 +586,9 @@ Syntax ://<knowXpath>/child::elementname
 EX     ://*[@placeholder='Username']/preceding::form
 6.location follwing sibling
 7.location preceding sibling
-
+------------------------------------------------------------------------------------------------------------
+Type of locator in selenium
+ID,Name,className,TagName,xpath,css selector,linklist,partciallink list,
 
 
 
